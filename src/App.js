@@ -33,8 +33,8 @@ function App() {
       <div className="mark">
         <a href="https://github.com/joutria"><p>Joutria</p></a>
       </div>
-      <marquee className="marquee2" direction="left">{quotes[index].quote}</marquee>
-      <marquee className="marquee1" direction="right">{quotes[index].author}</marquee>
+      <marquee className="marquee2" direction="left" style={{color: color2}}>{quotes[index].quote }</marquee>
+      <marquee className="marquee1" direction="right" style={{color: color2}}>{quotes[index].author}</marquee>
     </div>
   );
 }
