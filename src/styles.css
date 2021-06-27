@@ -38,10 +38,13 @@ button:hover {
 }
 
 .App {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 .Quote {
@@ -81,14 +84,14 @@ q::after {
 }
 
 .a {
-  border:0.2em solid rgba(0, 0, 0, 1);
+  border: 0.2em solid rgba(0, 0, 0, 1);
   border-radius: 2em;
   background-size: 2em;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
@@ -97,34 +100,50 @@ a:hover {
   transform: scale(1.1);
 }
 
-
-.mark{
+.mark {
   position: fixed;
   bottom: 1em;
   right: 1em;
   font-size: 1.5rem;
   color: white;
   font-weight: bold;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   z-index: 99;
 }
 
-.mark:hover{
+.mark:hover {
   transform: scale(1.1);
 }
 
-marquee{
-  position: fixed;
+.marquee1,
+.marquee2 {
+  position: absolute;
   font-size: 25em;
-  opacity: 75%;
+  opacity: 50%;
+  white-space: nowrap;
 }
 
-.marquee1{
-  bottom: 0px;
-  left: 0em;
+.marquee1 {
+  bottom: -50px;
+  animation-name: marquee;
+  animation-duration: 90s;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
 }
 
-.marquee2{
-  top: 0px;
-  left: 0em;
+.marquee2 {
+  top: -50px;
+  right: 0em;
+  animation-name: marquee;
+  animation-duration: 90s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes marquee {
+  0% {
+    left: 5em;
+  }
+  100% {
+    left: -5em;
+  }
 }

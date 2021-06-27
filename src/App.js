@@ -46,12 +46,12 @@ function App() {
         </a>
       </div>
       {/* Aditional block for the background */}
-      <marquee className="marquee2" direction="left" style={{ color: color2 }}>
+      <div className="marquee2" style={{ color: color2 }}>
         {quotes[index].quote}
-      </marquee>
-      <marquee className="marquee1" direction="right" style={{ color: color2 }}>
+      </div>
+      <div className="marquee1" direction="right" style={{ color: color2 }}>
         {quotes[index].author}
-      </marquee>
+      </div>
     </div>
   );
 }
