@@ -119,7 +119,7 @@ a:hover {
 .marquee2 {
   position: absolute;
   font-size: 25em;
-  opacity: 70%;
+  opacity: 0.5;
   white-space: nowrap;
   z-index: 1;
 }
