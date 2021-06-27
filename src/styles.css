@@ -116,7 +116,7 @@ a:hover {
 marquee{
   position: fixed;
   font-size: 25em;
-  opacity: 50%;
+  opacity: 75%;
 }
 
 .marquee1{
