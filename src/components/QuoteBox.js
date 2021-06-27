@@ -1,8 +1,15 @@
+// Components
 import Quote from "./Quote";
 
+// Starts the function with the given props
 function QuoteBox(props) {
+  /* Notice that this coponent does not have any states or additional functions by itself,
+  they all came from props */
+
+  // Render function
   return (
-    <div className="QuoteBox" style={{boxShadow: props.color2}}>
+    // Parent component
+    <div className="QuoteBox" style={{ boxShadow: props.color2 }}>
       <Quote
         setQuotes={props.setQuotes}
         setIndex={props.setIndex}
