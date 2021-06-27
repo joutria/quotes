@@ -58,6 +58,7 @@ function Quote(props) {
             tweet();
           }}
           target="_blank"
+          rel="noopener noreferrer"
           href={"https://twitter.com/intent/tweet?text=" + text}
           style={{
             backgroundImage: `url(${bird})`,
