@@ -126,7 +126,7 @@ a:hover {
 .marquee1 {
   bottom: -50px;
   animation-name: marquee;
-  animation-duration: 90s;
+  animation-duration: 60s;
   animation-iteration-count: infinite;
   animation-direction: reverse;
 }
