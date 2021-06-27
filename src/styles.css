@@ -119,31 +119,34 @@ a:hover {
 .marquee2 {
   position: absolute;
   font-size: 25em;
-  opacity: 50%;
+  opacity: 70%;
   white-space: nowrap;
+  z-index: 1;
 }
 
 .marquee1 {
   bottom: -50px;
   animation-name: marquee;
-  animation-duration: 60s;
+  animation-duration: 30s;
   animation-iteration-count: infinite;
-  animation-direction: reverse;
+  animation-direction: alternate-reverse;
 }
 
 .marquee2 {
   top: -50px;
-  right: 0em;
   animation-name: marquee;
-  animation-duration: 90s;
+  animation-duration: 30s;
   animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 @keyframes marquee {
-  0% {
-    left: 5em;
+ from {
+    padding-left: 100vh;
+    padding-right: 0em;
   }
-  100% {
-    left: -5em;
+  to {
+    padding-right: 100vh;
+    padding-left: 0em;
   }
 }
