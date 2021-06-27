@@ -16,7 +16,7 @@ function Quote(props) {
     // Assign the values to the color and the quote
     let idx = getRandomInt(102);
     let col = props.dic[getRandomInt(3)];
-    let col2 = props.dic2[getRandomInt(4)];
+    let col2 = props.dic2[getRandomInt(3)];
 
     // Assign the ? and a deafult value just in case one of the 2 variables is not read
     props.setIndex(idx ? idx : 0);
