@@ -1,26 +1,23 @@
 import "./App.css";
 import "./styles.css";
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 // Components
 import QuoteBox from "./components/QuoteBox";
 // Json file with the data
-import { quotes as q } from "./quotes.json";
+import q from "./quotes.json";
+import colors from "./colors.json";
 
 // Starts the function
 function App() {
   // States that will be passed to the child components
-  const [quotes, setQuotes] = useState(q);
-  const [index, setIndex] = useState(getRandomInt(103));
+  const quotes = q.quotes;
+  const [index, setIndex] = useState(() => Math.floor(Math.random() * quotes.length));
   const [color, setColor] = useState("#52006a");
   const [color2, setColor2] = useState("#85603F");
-  // Dictionaries for the color reference
-  const dic = { 0: "#26001B", 1: "#810034", 2: "#FF005C", 3: "#FFF600" };
-  const dic2 = { 0: "#85603F", 1: "#9E7540", 2: "#BD9354", 3: "#E3D18A" };
+  // Color references from colors.json
+  const background = colors.background;
+  const font = colors.font;
 
-  // Random Int generator
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
 
   // Render function
   return (
@@ -28,12 +25,11 @@ function App() {
     <div className="App" style={{ backgroundColor: color }}>
       {/* Fisrt Child and all the props that will be passed to this generation and the next ones */}
       <QuoteBox
-        setQuotes={setQuotes}
         setIndex={setIndex}
         setColor={setColor}
         setColor2={setColor2}
-        dic={dic}
-        dic2={dic2}
+        background={background}
+        font={font}
         quotes={quotes}
         index={index}
         color={color}

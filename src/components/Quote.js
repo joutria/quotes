@@ -1,44 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
 // Img forn one of the buttons
-import bird from "../bird.png";
+
 
 // Starts the function with the given props
 function Quote(props) {
-  const [text, setText] = useState("");
+
 
   // Random Int generator
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
 
   // State Updater
   function assign() {
     // Assign the values to the color and the quote
-    let idx = getRandomInt(102);
-    let col = props.dic[getRandomInt(3)];
-    let col2 = props.dic2[getRandomInt(3)];
-
-    // Assign the ? and a deafult value just in case one of the 2 variables is not read
-    props.setIndex(idx ? idx : 0);
-    props.setColor(col ? col : props.dic[0]);
-    props.setColor2(col2 ? col2 : props.dic2[0]);
+    const idx = Math.floor(Math.random() * props.quotes.length);
+    const col = props.background[Math.floor(Math.random() * Object.keys(props.background).length)];
+    const col2 = props.font[Math.floor(Math.random() * Object.keys(props.font).length)];
+    props.setIndex(idx);
+    props.setColor(col);
+    props.setColor2(col2);
   }
 
   // Tweet converter
   function tweet() {
-    let txt = props.quotes[props.index].quote.concat(
+    return props.quotes[props.index].quote.concat(
       ` -${props.quotes[props.index].author}`
-    );
-    txt = txt.replaceAll(" ", "%20");
-    setText(txt);
+    ).replaceAll(" ", "%20");
   }
-  // Console logs to verify performance
-  console.log(props.index);
-  console.log(props.color);
-  console.log(props.color2);
-  console.log(props.quotes[props.index].quote);
-  console.log(props.quotes[props.index].author);
-  console.log(text);
+
 
   // Render function
   return (
@@ -54,14 +41,11 @@ function Quote(props) {
       {/* Twitter button */}
       <div className="buttons">
         <a
-          onClick={function () {
-            tweet();
-          }}
           target="_blank"
           rel="noopener noreferrer"
-          href={"https://twitter.com/intent/tweet?text=" + text}
+          href={"https://twitter.com/intent/tweet?text=" + tweet()}
           style={{
-            backgroundImage: `url(${bird})`,
+            backgroundImage: 'url(/twitter-icon.png)',
             borderColor: props.color,
           }}
           className="twitter a"
@@ -82,4 +66,4 @@ function Quote(props) {
   );
 }
 
-export default Quote;
+export default React.memo(Quote);

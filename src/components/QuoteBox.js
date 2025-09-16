@@ -1,4 +1,4 @@
-// Components
+import React from "react";
 import Quote from "./Quote";
 
 // Starts the function with the given props
@@ -11,12 +11,11 @@ function QuoteBox(props) {
     // Parent component
     <div className="QuoteBox" style={{ boxShadow: props.color2 }}>
       <Quote
-        setQuotes={props.setQuotes}
         setIndex={props.setIndex}
         setColor={props.setColor}
         setColor2={props.setColor2}
-        dic={props.dic}
-        dic2={props.dic2}
+        background={props.background}
+        font={props.font}
         quotes={props.quotes}
         index={props.index}
         color={props.color}
@@ -26,4 +25,4 @@ function QuoteBox(props) {
   );
 }
 
-export default QuoteBox;
+export default React.memo(QuoteBox);

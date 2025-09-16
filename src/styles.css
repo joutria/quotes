@@ -1,14 +1,13 @@
 * {
   padding: 0;
   margin: 0;
-  transition: 0.25s;
 }
 
 html,
 body,
 #root {
   min-height: 100vh;
-  min-width: 100vh;
+  min-width: 100vw;
 }
 
 button {
@@ -28,7 +27,7 @@ button:hover {
 
 .QuoteBox {
   padding: 1em;
-  min-height: 15vh;
+  min-height: 10em;
   width: 25em;
   background: white;
   box-shadow: 0 0 1em rgba(0, 0, 0, 1);
@@ -62,7 +61,7 @@ button:hover {
 
 .text {
   font-family: "Be Vietnam", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.5em;
   margin-bottom: 0.5em;
 }
 
@@ -82,7 +81,8 @@ q::after {
   padding: 0;
 }
 
-.a {
+.a,
+.button {
   border: 0.2em solid rgba(0, 0, 0, 1);
   border-radius: 2em;
   background-size: 2em;
@@ -90,12 +90,20 @@ q::after {
   background-position: center center;
 }
 
-a {
+
+a,
+button {
   text-decoration: none;
   color: inherit;
+  font-family: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-a:hover {
+
+a:hover,
+button:hover {
   transform: scale(1.1);
 }
 
@@ -108,6 +116,7 @@ a:hover {
   font-weight: bold;
   font-family: "Courier New", Courier, monospace;
   z-index: 99;
+  text-shadow: 2px 2px 4px black;
 }
 
 .mark:hover {
