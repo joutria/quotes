@@ -1,6 +1,6 @@
 import "./App.css";
 import "./styles.css";
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 // Components
 import QuoteBox from "./components/QuoteBox";
 // Json file with the data
